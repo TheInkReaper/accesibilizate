@@ -1,0 +1,40 @@
+# Solicita crear un nuevo administrador
+POST http://localhost:3000/admin
+Content-Type: application/json
+
+{
+    "nombre": "Pedro",
+    "primer_apellido": "Perez",  
+    "segundo_apellido": "Perez",  
+    "email": "han_rp@hotmail.com",
+    "pass": "abcde"
+}
+
+# Prueba una solicitud GET para obtener administradores
+GET http://localhost:3000/admin
+
+# Prueba una solicitud GET en una ruta que no existe
+GET http://localhost:3000/usuario
+
+# Solicita crear un administrador en una ruta incorrecta (debe ser "/admin" en lugar de "/adminer")
+POST http://localhost:3000/admin  
+
+# Solicita iniciar sesión como administrador
+POST http://localhost:3000/admin/login
+Content-Type: application/json
+
+{
+    "email": "pedro@gmail.com",
+    "pass": "abcde"
+}
+
+# Solicita crear una nueva incidencia
+POST http://localhost:3000/incidents
+Content-Type: application/json
+
+{
+    "titulo": "Hoyo",
+    "descripcion": "Un hoyo en la calle mayor",
+    "ciudad": "Madrid",
+    "barrio": "Pacifico"
+}
